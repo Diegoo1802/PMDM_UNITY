@@ -19,17 +19,17 @@ public class PalaMoved : MonoBehaviour
     void Update()
     {
         // Movimiento pala 1 
-       // if (gameObject.CompareTag("PalaIzq"))
+      
         {
-            x = Input.GetAxis (ejeH);
+            x = Input.GetAxis(ejeH);
+            //y = Input.GetAxis(ejeV);
+
             y = Input.GetAxis(ejeV);
+            transform.Translate(new Vector2 (0, y) * speed * Time.deltaTime);
+
+
         }
-        // Movimiento pala 2 
-       //// else if (gameObject.CompareTag("PalaDer"))
-       // {
-       //     x = Input.GetAxis("Horizontal2");
-       //     y = Input.GetAxis("Vertical2");
-       // }
+        
     }
 
     private void FixedUpdate()

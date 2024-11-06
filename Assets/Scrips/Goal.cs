@@ -4,6 +4,10 @@ using UnityEngine;
 
 public class Goal : MonoBehaviour
 {
+
+    public uint playerIndex;
+
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         // Intenta obtener el componente Ball del objeto que ha entrado en el trigger
@@ -13,6 +17,7 @@ public class Goal : MonoBehaviour
             // Llama al método ResetPosition de la bola
             ball.ResetPosition();
             Debug.Log("La pelota ha alcanzado el gol y ha sido reiniciada."); // Para depuración
+            GameManager.instance.SetIndexPuntuacion((int)playerIndex, GameManager.instance.GetIndexPuntuacion((int)playerIndex) +1);
         }
     }
 }
